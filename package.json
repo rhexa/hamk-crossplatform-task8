@@ -1,7 +1,7 @@
 {
-  "name": "expressbasicrestcrud",
+  "name": "NodeExpressRestAPI",
   "version": "1.0.0",
-  "description": "Practicing basic RESTful web service CRUD operation on nodeJS using expressJS",
+  "description": "RESTful web service CRUD operation on nodeJS using expressJS",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rhexa/nodeJS-express-rest-practice-crud.git"
+    "url": "git+https://github.com/rhexa/hamk-crossplatform-task8.git"
   },
   "author": "Rhexa",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/rhexa/nodeJS-express-rest-practice-crud/issues"
+    "url": "https://github.com/rhexa/hamk-crossplatform-task8/issues"
   },
-  "homepage": "https://github.com/rhexa/nodeJS-express-rest-practice-crud#readme",
+  "homepage": "https://github.com/rhexa/hamk-crossplatform-task8#readme",
   "dependencies": {
     "express": "^4.17.1",
     "express-fileupload": "^1.2.1"

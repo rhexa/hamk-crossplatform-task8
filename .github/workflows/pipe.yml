@@ -22,7 +22,6 @@ jobs:
         run: |
           URL=$(cat url.txt)  
           echo "::set-output name=deployUrl::$URL"
-      #   run: echo "::set-output name=deployUrl::$DEPLOY_URL"
 
   Test:
     needs: [Build]

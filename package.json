@@ -1,5 +1,5 @@
 {
-  "name": "NodeExpressRestAPI",
+  "name": "node-express-rest-api",
   "version": "1.0.0",
   "description": "RESTful web service CRUD operation on nodeJS using expressJS",
   "main": "index.js",

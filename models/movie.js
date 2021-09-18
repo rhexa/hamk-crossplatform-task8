@@ -6,7 +6,7 @@ let movies = [
   {
     id: '1588323412643',
     title: 'Harry Potter and the Sorcerers Stone',
-    picture: { name: '2016-kia-sportage.jpeg', path: 'http://localhost:3000/public/uploads/2016-kia-sportage.jpeg' }
+    picture: { name: '2016-kia-sportage.jpeg', path: 'http://localhost:3000/public/uploads/2016-kia-sportage.jpeg' },
     year: 2001,
     director: 'Chris Columbus'
   }

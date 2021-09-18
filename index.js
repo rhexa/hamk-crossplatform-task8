@@ -5,7 +5,7 @@ const app = express()
 
 const port = process.env.PORT || 3000
 
-process.env.BASE_URL = process.env.BASE_URL || `http://localhost:${port}`
+process.env.BASE_URL = process.env.BASE_URL || `http://192.168.100.18:${port}`
 
 // const base = 'http://localhost';
 

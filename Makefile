@@ -3,7 +3,7 @@ build:	config
 	heroku apps:create --app "${APP_NAME}" --region eu | cut -d '|' -f1 | xargs > url.txt
 
 deploy-heroku:	config
-	heroku config:set BASE_URL=$(cat url.txt) --app ${APP_NAME}
+	cat url.txt | xargs -I{} heroku config:set BASE_URL={} --app ${APP_NAME}
 	heroku git:remote --app "${APP_NAME}"
 	git restore .
 	git checkout -b main

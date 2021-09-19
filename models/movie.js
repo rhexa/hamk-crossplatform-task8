@@ -2,34 +2,34 @@ const uuid = () => new Date().getTime().toString()
 
 let movies = [
   {
-    "id": "1588323375416",
-    "title": "Star Wars: Episode IX",
-    "picture": {
-        "name": "b1a786fd-172e-4ccb-b415-f06ae047dcb7.jpg",
-        "path": "http://192.168.100.18:3000/public/uploads/b1a786fd-172e-4ccb-b415-f06ae047dcb7.jpg"
+    id: '1588323375416',
+    title: 'Star Wars: Episode IX',
+    picture: {
+      name: 'b1a786fd-172e-4ccb-b415-f06ae047dcb7.jpg',
+      path: 'http://192.168.100.18:3000/public/uploads/b1a786fd-172e-4ccb-b415-f06ae047dcb7.jpg'
     },
-    "year": "2019",
-    "director": "J.J. Abrams"
+    year: '2019',
+    director: 'J.J. Abrams'
   },
   {
-    "id": "1588323390624",
-    "title": "The Irishman",
-    "picture": {
-        "name": "71434cdc-c4b5-4b83-a1e8-57e3807c387a.jpg",
-        "path": "http://192.168.100.18:3000/public/uploads/71434cdc-c4b5-4b83-a1e8-57e3807c387a.jpg"
+    id: '1588323390624',
+    title: 'The Irishman',
+    picture: {
+      name: '71434cdc-c4b5-4b83-a1e8-57e3807c387a.jpg',
+      path: 'http://192.168.100.18:3000/public/uploads/71434cdc-c4b5-4b83-a1e8-57e3807c387a.jpg'
     },
-    "year": "2019",
-    "director": "Martin Scorsese"
+    year: '2019',
+    director: 'Martin Scorsese'
   },
   {
-    "id": "1588323412643",
-    "title": "Harry Potter and the Sorcerers Stone",
-    "picture": {
-        "name": "180e138a-0baa-4aa6-94fd-3f49ac392382.jpg",
-        "path": "http://192.168.100.18:3000/public/uploads/180e138a-0baa-4aa6-94fd-3f49ac392382.jpg"
+    id: '1588323412643',
+    title: 'Harry Potter and the Sorcerers Stone',
+    picture: {
+      name: '180e138a-0baa-4aa6-94fd-3f49ac392382.jpg',
+      path: 'http://192.168.100.18:3000/public/uploads/180e138a-0baa-4aa6-94fd-3f49ac392382.jpg'
     },
-    "year": "2001",
-    "director": "Chris Columbus"
+    year: '2001',
+    director: 'Chris Columbus'
   }
 ]
 

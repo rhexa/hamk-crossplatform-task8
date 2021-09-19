@@ -6,7 +6,7 @@ let movies = [
     title: 'Star Wars: Episode IX',
     picture: {
       name: 'b1a786fd-172e-4ccb-b415-f06ae047dcb7.jpg',
-      path: 'http://192.168.100.18:3000/public/uploads/b1a786fd-172e-4ccb-b415-f06ae047dcb7.jpg'
+      path: process.env.BASE_URL + '/public/uploads/b1a786fd-172e-4ccb-b415-f06ae047dcb7.jpg'
     },
     year: '2019',
     director: 'J.J. Abrams'
@@ -16,7 +16,7 @@ let movies = [
     title: 'The Irishman',
     picture: {
       name: '71434cdc-c4b5-4b83-a1e8-57e3807c387a.jpg',
-      path: 'http://192.168.100.18:3000/public/uploads/71434cdc-c4b5-4b83-a1e8-57e3807c387a.jpg'
+      path: process.env.BASE_URL + '/public/uploads/71434cdc-c4b5-4b83-a1e8-57e3807c387a.jpg'
     },
     year: '2019',
     director: 'Martin Scorsese'
@@ -26,7 +26,7 @@ let movies = [
     title: 'Harry Potter and the Sorcerers Stone',
     picture: {
       name: '180e138a-0baa-4aa6-94fd-3f49ac392382.jpg',
-      path: 'http://192.168.100.18:3000/public/uploads/180e138a-0baa-4aa6-94fd-3f49ac392382.jpg'
+      path: process.env.BASE_URL + '/public/uploads/180e138a-0baa-4aa6-94fd-3f49ac392382.jpg'
     },
     year: '2001',
     director: 'Chris Columbus'

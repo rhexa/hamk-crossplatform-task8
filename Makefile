@@ -1,7 +1,7 @@
 build:	config
 	heroku apps:destroy --app "${APP_NAME}" --confirm "${APP_NAME}" && echo 1 || echo 0
 	heroku apps:create --app "${APP_NAME}" --region eu | cut -d '|' -f1 | xargs > url.txt
-	cat url.txt
+	echo "BASE_URL=$(cat url.txt)" > .env
 
 deploy-heroku:	config
 	heroku git:remote --app "${APP_NAME}"

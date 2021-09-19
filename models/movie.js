@@ -1,17 +1,40 @@
+const uuid = () => new Date().getTime().toString()
+
 let movies = [
-  { id: '1588323375416', title: 'Star Wars: Episode IX - The Rise of Skywalker', picture: {}, year: 2019, director: 'J.J. Abrams' },
-  { id: '1588323390624', title: 'The Irishman', picture: {}, year: 2019, director: 'Martin Scorsese' },
+  {
+    id: '1588323375416',
+    title: 'Star Wars: Episode IX',
+    picture: {
+      name: 'b1a786fd-172e-4ccb-b415-f06ae047dcb7.jpg',
+      path: process.env.BASE_URL + '/public/uploads/b1a786fd-172e-4ccb-b415-f06ae047dcb7.jpg'
+    },
+    year: '2019',
+    director: 'J.J. Abrams'
+  },
+  {
+    id: '1588323390624',
+    title: 'The Irishman',
+    picture: {
+      name: '71434cdc-c4b5-4b83-a1e8-57e3807c387a.jpg',
+      path: process.env.BASE_URL + '/public/uploads/71434cdc-c4b5-4b83-a1e8-57e3807c387a.jpg'
+    },
+    year: '2019',
+    director: 'Martin Scorsese'
+  },
   {
     id: '1588323412643',
     title: 'Harry Potter and the Sorcerers Stone',
-    picture: { name: '2016-kia-sportage.jpeg', path: 'http://localhost:3000/public/uploads/2016-kia-sportage.jpeg' },
-    year: 2001,
+    picture: {
+      name: '180e138a-0baa-4aa6-94fd-3f49ac392382.jpg',
+      path: process.env.BASE_URL + '/public/uploads/180e138a-0baa-4aa6-94fd-3f49ac392382.jpg'
+    },
+    year: '2001',
     director: 'Chris Columbus'
   }
 ]
 
 const Movie = class {
-  constructor (id, title = 'Default', picture = {}, year = 2020, director = 'Default') {
+  constructor (id = uuid(), title = 'Default', picture = {}, year = 2020, director = 'Default') {
     this.id = id
     this.title = title
     this.picture = picture
@@ -37,6 +60,8 @@ const Movie = class {
   }
 }
 
+const getMovies = () => movies
+
 const getMovie = (movie) => {
   movie.parseMovie(movies.find(mov => mov.id === movie.id))
   return movie
@@ -56,7 +81,7 @@ const deleteMovie = (movie) => {
 }
 
 module.exports = {
-  getMovies: () => { return movies },
+  getMovies,
   getMovie,
   addMovie,
   updateMovie,

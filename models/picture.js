@@ -41,7 +41,7 @@ const uploadTemp = async (req, res) => {
 const uploadPicture = async (picture, req) => {
   try {
     fs.copyFile(picture.path, './public/uploads/' + picture.name)
-    picture.path = process.env.BASE_URL + '/public/uploads/' + picture.name
+    picture.path = '/public/uploads/' + picture.name
     console.log(`uploaded : ${picture.path}`)
     return picture
   } catch (error) {

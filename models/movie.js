@@ -85,7 +85,7 @@ const addMovie = (movie) => { movies.push(movie) }
 
 const updateMovie = (movie) => {
   const replacement = new Movie()
-  const index = movies.findIndex(mov => mov.id === movie.id)
+  const index = getMovie(movie)
   replacement.mergeMovie(index)
   replacement.mergeMovie(movie)
   movies.splice(index, 1, replacement)

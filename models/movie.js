@@ -45,7 +45,7 @@ const Movie = class {
   // for updating movie's data
   mergeMovie (movie) {
     if (movie.title) this.title = movie.title
-    if (movie.picture) this.picture = movie.picture
+    if (movie.picture && Object.keys(movie.picture).length !== 0) this.picture = movie.picture
     if (movie.year) this.year = movie.year
     if (movie.director) this.director = movie.director
   }
@@ -61,32 +61,38 @@ const Movie = class {
 }
 
 const getMovies = () => {
-  return movies.map(m => (
-    {
+  return movies.map(m => {
+    const mov = {
       id: m.id,
       title: m.title,
-      picture: {
-        name: m.picture.name,
-        path: process.env.BASE_URL + m.picture.path
-      },
       year: m.year,
       director: m.director
     }
-  )
-  )
+
+    if (m.picture && Object.keys(m.picture).length !== 0) {
+      mov.picture = {
+        name: m.picture.name,
+        path: process.env.BASE_URL + m.picture.path
+      }
+    }
+
+    return mov
+  })
 }
 
 const getMovie = (movie) => {
-  movie.parseMovie(getMovies().find(mov => mov.id === movie.id))
-  return movie
+  return getMovies().find(mov => mov.id === movie.id)
 }
 
 const addMovie = (movie) => { movies.push(movie) }
 
 const updateMovie = (movie) => {
-  const index = movies.findIndex(mov => mov.id === movie.id)
-  movies.splice(index, 1, movie)
-  return movie
+  const index = movies.findIndex(m => m.id === movie.id)
+  const replacement = new Movie()
+  replacement.mergeMovie(movies[index])
+  replacement.mergeMovie(movie)
+  movies.splice(index, 1, replacement)
+  return replacement
 }
 
 const deleteMovie = (movie) => {

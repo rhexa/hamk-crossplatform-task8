@@ -61,18 +61,18 @@ const Movie = class {
 }
 
 const getMovies = () => {
-	return movies.map(m => (
-      {
-        id: m.id,
-        title: m.title,
-        picture: {
-          name: m.picture.name,
-          path: process.env.BASE_URL + m.picture.path
-        },
-        year: m.year,
-        director: m.director
-      }
-    ) 
+  return movies.map(m => (
+    {
+      id: m.id,
+      title: m.title,
+      picture: {
+        name: m.picture.name,
+        path: process.env.BASE_URL + m.picture.path
+      },
+      year: m.year,
+      director: m.director
+    }
+  )
   )
 }
 

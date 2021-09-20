@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
 
 // update
 router.put('/:id', async (req, res) => {
-  const movie = movies.getMovie(new Movie(req.params.id))
+  const movie = new Movie(req.params.id)
   movie.mergeMovie(req.body)
 
   if (req.body.picture) {

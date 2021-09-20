@@ -77,16 +77,14 @@ const getMovies = () => {
 }
 
 const getMovie = (movie) => {
-  movie.parseMovie(getMovies().find(mov => mov.id === movie.id))
-  return movie
+  return getMovies().find(mov => mov.id === movie.id)
 }
 
 const addMovie = (movie) => { movies.push(movie) }
 
 const updateMovie = (movie) => {
-  const replacement = new Movie()
   const index = movies.findIndex(m => m.id === movie.id)
-  replacement.mergeMovie(movies[index])
+  const replacement = new Movie().mergeMovie(movies[index])
   replacement.mergeMovie(movie)
   movies.splice(index, 1, replacement)
   return index

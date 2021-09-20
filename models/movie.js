@@ -45,7 +45,7 @@ const Movie = class {
   // for updating movie's data
   mergeMovie (movie) {
     if (movie.title) this.title = movie.title
-    if (movie.picture) this.picture = movie.picture
+    if (movie.picture && Object.keys(movie.picture).length !== 0) this.picture = movie.picture
     if (movie.year) this.year = movie.year
     if (movie.director) this.director = movie.director
   }
@@ -84,10 +84,11 @@ const addMovie = (movie) => { movies.push(movie) }
 
 const updateMovie = (movie) => {
   const index = movies.findIndex(m => m.id === movie.id)
-  const replacement = new Movie().mergeMovie(movies[index])
+  const replacement = new Movie()
+  replacement.mergeMovie(movies[index])
   replacement.mergeMovie(movie)
   movies.splice(index, 1, replacement)
-  return index
+  return replacement
 }
 
 const deleteMovie = (movie) => {

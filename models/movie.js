@@ -62,7 +62,6 @@ const Movie = class {
 
 const getMovies = () => {
   return movies.map(m => {
-
     const mov = {
       id: m.id,
       title: m.title,

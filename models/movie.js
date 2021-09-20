@@ -84,9 +84,11 @@ const getMovie = (movie) => {
 const addMovie = (movie) => { movies.push(movie) }
 
 const updateMovie = (movie) => {
-  const index = movies.findIndex(mov => mov.id === movie.id)
+  const index = new Movie()
+  index.parseMovie(movies.findIndex(mov => mov.id === movie.id))
+  index.mergeMovie(movie)
   movies.splice(index, 1, movie)
-  return movie
+  return index
 }
 
 const deleteMovie = (movie) => {

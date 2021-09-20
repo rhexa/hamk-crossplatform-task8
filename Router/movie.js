@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
   const movie = new Movie()
   movie.parseMovie(req.body)
 
-  if (movie.picture) {
+  if (movie.picture && Object.keys(movie.picture).length !== 0) {
     try {
       movie.picture = await uploadPicture(movie.picture, req)
     } catch (error) {
@@ -39,7 +39,7 @@ router.put('/:id', async (req, res) => {
   const movie = new Movie(req.params.id)
   movie.mergeMovie(req.body)
 
-  if (req.body.picture) {
+  if (req.body.picture && Object.keys(req.body.picture).length !== 0) {
     try {
       movie.picture = await uploadPicture(req.body.picture, req)
     } catch (error) {

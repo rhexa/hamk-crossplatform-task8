@@ -61,19 +61,24 @@ const Movie = class {
 }
 
 const getMovies = () => {
-  return movies.map(m => (
-    {
+  return movies.map(m => {
+
+    const mov = {
       id: m.id,
       title: m.title,
-      picture: {
-        name: m.picture.name,
-        path: process.env.BASE_URL + m.picture.path
-      },
       year: m.year,
       director: m.director
     }
-  )
-  )
+
+    if (m.picture && Object.keys(m.picture).length !== 0) {
+      mov.picture = {
+        name: m.picture.name,
+        path: process.env.BASE_URL + m.picture.path
+      }
+    }
+
+    return mov
+  })
 }
 
 const getMovie = (movie) => {

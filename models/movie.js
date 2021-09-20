@@ -6,7 +6,7 @@ let movies = [
     title: 'Star Wars: Episode IX',
     picture: {
       name: 'b1a786fd-172e-4ccb-b415-f06ae047dcb7.jpg',
-      path: process.env.BASE_URL + '/public/uploads/b1a786fd-172e-4ccb-b415-f06ae047dcb7.jpg'
+      path: '/public/uploads/b1a786fd-172e-4ccb-b415-f06ae047dcb7.jpg'
     },
     year: '2019',
     director: 'J.J. Abrams'
@@ -16,7 +16,7 @@ let movies = [
     title: 'The Irishman',
     picture: {
       name: '71434cdc-c4b5-4b83-a1e8-57e3807c387a.jpg',
-      path: process.env.BASE_URL + '/public/uploads/71434cdc-c4b5-4b83-a1e8-57e3807c387a.jpg'
+      path: '/public/uploads/71434cdc-c4b5-4b83-a1e8-57e3807c387a.jpg'
     },
     year: '2019',
     director: 'Martin Scorsese'
@@ -26,7 +26,7 @@ let movies = [
     title: 'Harry Potter and the Sorcerers Stone',
     picture: {
       name: '180e138a-0baa-4aa6-94fd-3f49ac392382.jpg',
-      path: process.env.BASE_URL + '/public/uploads/180e138a-0baa-4aa6-94fd-3f49ac392382.jpg'
+      path: '/public/uploads/180e138a-0baa-4aa6-94fd-3f49ac392382.jpg'
     },
     year: '2001',
     director: 'Chris Columbus'
@@ -60,10 +60,24 @@ const Movie = class {
   }
 }
 
-const getMovies = () => movies
+const getMovies = () => {
+  return movies.map(m => (
+    {
+      id: m.id,
+      title: m.title,
+      picture: {
+        name: m.picture.name,
+        path: process.env.BASE_URL + m.picture.path
+      },
+      year: m.year,
+      director: m.director
+    }
+  )
+  )
+}
 
 const getMovie = (movie) => {
-  movie.parseMovie(movies.find(mov => mov.id === movie.id))
+  movie.parseMovie(getMovies().find(mov => mov.id === movie.id))
   return movie
 }
 

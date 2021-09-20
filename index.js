@@ -4,8 +4,8 @@ const path = require('path')
 const app = express()
 
 const port = process.env.PORT || 3000
-
-process.env.BASE_URL = `${process.env.BASE_URL}:${port}` || `http://localhost:${port}`
+const BASE_URL = process.env.BASE_URL
+process.env.BASE_URL = process.env.NODE_ENV === 'production' ? BASE_URL : `${BASE_URL}:${port}`
 
 // const base = 'http://localhost';
 // app.set('base', `${base}:${port}`);
